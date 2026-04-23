@@ -11,11 +11,11 @@ def master():
             if Weapon <= 0 or Weapon >= 11 :
                 print ("try again")
                 forge()
+            else:
+                print (Weapon -1)
         except ValueError:
             print ("That is not a number")
             forge()
-        finally:
-            print (Weapon -1)
     forge()
     def smith():
         try:
@@ -24,10 +24,23 @@ def master():
             if Armor <= 0 or Armor >= 11 :
                 print ("try again")
                 smith()
+            else:
+                print (Armor -1)
         except ValueError:
             print ("That is not a number")
             smith()
-        finally:
-            print (Armor -1)
     smith()
+    def origin():
+        try:
+            print("1,2,3,4,5,6,7,8,9,10")
+            Skill = int(input("Type which armor you desire "))
+            if Skill <= 0 or Skill >= 11 :
+                print ("try again")
+                origin()
+            else:
+                print (Skill -1)
+        except ValueError:
+            print ("That is not a number")
+            origin()
+    origin()
 master()
