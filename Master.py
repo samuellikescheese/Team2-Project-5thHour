@@ -1,6 +1,7 @@
 import random, time
 print ("welcome to Gladiator Battle Simulator")
 print ("Your first gladiator")
+changer = 1
 def master():
     class Gladi:
         def __init__(self,title,damage,defence,back):
@@ -16,7 +17,12 @@ def master():
             print("Thats not a name")
             namer()
         else:
-            print(f"Your gladiators name is {Name}")
+            if changer == 1:
+                print(f"Your 1st gladiators name is {Name}")
+                fighter1.title = Name
+            else:
+                print(f"Your 2nd gladiators name is {Name}")
+                fighter2.title = Name
     namer()
     def forge():
         try:
@@ -26,7 +32,12 @@ def master():
                 print ("try again")
                 forge()
             else:
-                print (f"Your weapon is {Weapon -1}")
+                if changer == 1:
+                    print(f"Your 1st gladiator, {fighter1.title}s weapon is {Weapon - 1}")
+                    fighter1.damage = Weapon
+                else:
+                    print(f"Your 2nd gladiators, {fighter2.title}s weapon is {Weapon - 1}")
+                    fighter2.damage = Weapon
         except ValueError:
             print ("That is not a number")
             forge()
