@@ -1,8 +1,22 @@
+import random, time
 print ("welcome to Gladiator Battle Simulator")
+print ("Your first gladiator")
 def master():
+    class Gladi:
+        def __init__(self,title,damage,defence,back):
+            self.title=title
+            self.damage=damage
+            self.defence=defence
+            self.back=back
+    fighter1 = Gladi(0,0,0,0)
+    fighter2 = Gladi(0,0,0,0)
     def namer():
         Name = input("Type your gladiators Name ")
-        print(f"your gladiators name is {Name}")
+        if Name == "":
+            print("Thats not a name")
+            namer()
+        else:
+            print(f"Your gladiators name is {Name}")
     namer()
     def forge():
         try:
@@ -12,7 +26,7 @@ def master():
                 print ("try again")
                 forge()
             else:
-                print (Weapon -1)
+                print (f"Your weapon is {Weapon -1}")
         except ValueError:
             print ("That is not a number")
             forge()
@@ -25,7 +39,7 @@ def master():
                 print ("try again")
                 smith()
             else:
-                print (Armor -1)
+                print (f"Your armor is {Armor -1}")
         except ValueError:
             print ("That is not a number")
             smith()
@@ -33,14 +47,20 @@ def master():
     def origin():
         try:
             print("1,2,3,4,5,6,7,8,9,10")
-            Skill = int(input("Type which armor you desire "))
+            Skill = int(input("Type which skill you desire "))
             if Skill <= 0 or Skill >= 11 :
                 print ("try again")
                 origin()
             else:
-                print (Skill -1)
+                print (f"Your Skill is {Skill -1}")
         except ValueError:
             print ("That is not a number")
             origin()
     origin()
+    def change():
+        print("Now the your second gladiator")
+    change()
+    def battle():
+        print("Welcome to the COLOSSEUM")
+    battle()
 master()
