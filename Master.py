@@ -1,8 +1,28 @@
+import random, time
 print ("welcome to Gladiator Battle Simulator")
+print ("Your first gladiator")
+changer = 1
 def master():
+    class Gladi:
+        def __init__(self,title,damage,defence,back):
+            self.title=title
+            self.damage=damage
+            self.defence=defence
+            self.back=back
+    fighter1 = Gladi(0,0,0,0)
+    fighter2 = Gladi(0,0,0,0)
     def namer():
         Name = input("Type your gladiators Name ")
-        print(f"your gladiators name is {Name}")
+        if Name == "":
+            print("Thats not a name")
+            namer()
+        else:
+            if changer == 1:
+                print(f"Your 1st gladiators name is {Name}")
+                fighter1.title = Name
+            else:
+                print(f"Your 2nd gladiators name is {Name}")
+                fighter2.title = Name
     namer()
     def forge():
         try:
@@ -11,11 +31,16 @@ def master():
             if Weapon <= 0 or Weapon >= 11 :
                 print ("try again")
                 forge()
+            else:
+                if changer == 1:
+                    print(f"Your 1st gladiator, {fighter1.title}s weapon is {Weapon - 1}")
+                    fighter1.damage = Weapon
+                else:
+                    print(f"Your 2nd gladiators, {fighter2.title}s weapon is {Weapon - 1}")
+                    fighter2.damage = Weapon
         except ValueError:
             print ("That is not a number")
             forge()
-        finally:
-            print (Weapon -1)
     forge()
     def smith():
         try:
@@ -24,10 +49,29 @@ def master():
             if Armor <= 0 or Armor >= 11 :
                 print ("try again")
                 smith()
+            else:
+                print (f"Your armor is {Armor -1}")
         except ValueError:
             print ("That is not a number")
             smith()
-        finally:
-            print (Armor -1)
     smith()
+    def origin():
+        try:
+            print("1,2,3,4,5,6,7,8,9,10")
+            Skill = int(input("Type which skill you desire "))
+            if Skill <= 0 or Skill >= 11 :
+                print ("try again")
+                origin()
+            else:
+                print (f"Your Skill is {Skill -1}")
+        except ValueError:
+            print ("That is not a number")
+            origin()
+    origin()
+    def change():
+        print("Now the your second gladiator")
+    change()
+    def battle():
+        print("Welcome to the COLOSSEUM")
+    battle()
 master()
