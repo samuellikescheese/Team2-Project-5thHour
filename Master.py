@@ -50,7 +50,12 @@ def master():
                 print ("try again")
                 smith()
             else:
-                print (f"Your armor is {Armor -1}")
+                if changer == 1:
+                    print(f"Your 1st gladiator, {fighter1.title}s armor is {Armor - 1}")
+                    fighter1.defence = Armor
+                else:
+                    print(f"Your 2nd gladiators, {fighter2.title}s armor is {Armor - 1}")
+                    fighter2.defence = Armor
         except ValueError:
             print ("That is not a number")
             smith()
@@ -63,15 +68,28 @@ def master():
                 print ("try again")
                 origin()
             else:
-                print (f"Your Skill is {Skill -1}")
+                if changer == 1:
+                    print(f"Your 1st gladiator, {fighter1.title}s skill is {Skill - 1}")
+                    fighter1.back = Skill
+                else:
+                    print(f"Your 2nd gladiators, {fighter2.title}s skill is {Skill - 1}")
+                    fighter2.back = Skill
         except ValueError:
             print ("That is not a number")
             origin()
     origin()
     def change():
         print("Now the your second gladiator")
+        global changer
+        changer = 2
+        namer()
+        forge()
+        smith()
+        origin()
     change()
     def battle():
         print("Welcome to the COLOSSEUM")
+        print(fighter1.title, fighter1.damage, fighter1.defence, fighter1.back)
+        print(fighter2.title, fighter2.damage, fighter2.defence, fighter2.back)
     battle()
 master()
