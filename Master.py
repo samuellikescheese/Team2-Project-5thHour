@@ -4,6 +4,21 @@ import random, time
 print ("welcome to Gladiator Battle Simulator")
 print ("Your first gladiator")
 changer = 1
+class armor:
+    def __init__(self,sub,AC):
+        self.sub=sub
+        self.AC=AC
+Leather = armor('Leather',13)
+Iron = armor('Iron',15)
+Samurai = armor('Samurai',15)
+Overgrown = armor('Overgrown',11)
+Champion = armor('Champion',14)
+Radiant = armor('Radiant',13)
+Ninja = armor('Ninja',12)
+Cursed = armor('Cursed',16)
+Charge = armor('Charge',13)
+Tank = armor('Tank',8)
+lister = ["Leather","Iron","Samurai","Overgrown","Champion","Radiant","Ninja","Cursed","Charge","Tank"]
 def master():
     class Gladi:
         def __init__(self,title,damage,defence,back):
@@ -52,12 +67,30 @@ def master():
                 print ("try again")
                 smith()
             else:
+                if Armor == 1:
+                    fighter1.defence = Leather.AC
+                if Armor == 2:
+                    fighter1.defence = Iron.AC
+                if Armor == 3:
+                    fighter1.defence = Samurai.AC
+                if Armor == 4:
+                    fighter1.defence = Overgrown.AC
+                if Armor == 5:
+                    fighter1.defence = Champion.AC
+                if Armor == 6:
+                    fighter1.defence = Radiant.AC
+                if Armor == 7:
+                    fighter1.defence = Ninja.AC
+                if Armor == 8:
+                    fighter1.defence = Cursed.AC
+                if Armor == 9:
+                    fighter1.defence = Charge.AC
+                if Armor == 10:
+                    fighter1.defence = Tank.AC
                 if changer == 1:
-                    print(f"Your 1st gladiator, {fighter1.title}s armor is {Armor - 1}")
-                    fighter1.defence = Armor
+                    print(f"Your 1st gladiator, {fighter1.title}s armor is {lister[Armor - 1]}")
                 else:
-                    print(f"Your 2nd gladiators, {fighter2.title}s armor is {Armor - 1}")
-                    fighter2.defence = Armor
+                    print(f"Your 2nd gladiators, {fighter2.title}s armor is {lister[Armor - 1]}")
         except ValueError:
             print ("That is not a number")
             smith()
