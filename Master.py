@@ -19,6 +19,21 @@ Cursed = armor('Cursed',16)
 Charge = armor('Charge',13)
 Tank = armor('Tank',8)
 lister = ["Leather","Iron","Samurai","Overgrown","Champion","Radiant","Ninja","Cursed","Charge","Tank"]
+class weapon:
+    def __init__(self,sub,DG):
+        self.sub=sub
+        self.DG=DG
+Gladius = weapon('Gladius',random.randint(3,6))
+Spatha = weapon('Spatha',random.randint(1,10))
+Pugio = weapon('Pugio',random.randint(1,10))
+Hasta = weapon('Hasta',random.randint(1,10))
+Fascina = weapon('Fascina',random.randint(1,10))
+Semispatha = weapon('Semispatha',random.randint(1,10))
+Lancea = weapon('Lancea',random.randint(1,10))
+Sica = weapon('Sica',random.randint(1,10))
+Pilum = weapon('Pilum',random.randint(1,10))
+Arcus = weapon('Arcus',random.randint(1,10))
+weaplist = ["Gladius","Spatha","Pugio","Hasta","Fascina","Semispatha","Lancea","Sica","Pilum","Arcus"]
 def master():
     class Gladi:
         def __init__(self,title,damage,defence,back):
