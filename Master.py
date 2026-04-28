@@ -4,6 +4,10 @@ import random, time
 print ("welcome to Gladiator Battle Simulator")
 print ("Your first gladiator")
 changer = 1
+wa = ""
+wb = ""
+aa = ""
+ab = ""
 class armor:
     def __init__(self,sub,AC):
         self.sub=sub
@@ -23,16 +27,16 @@ class weapon:
     def __init__(self,sub,DG):
         self.sub=sub
         self.DG=DG
-Gladius = weapon('Gladius',random.randint(3,6))
-Spatha = weapon('Spatha',random.randint(1,10))
-Pugio = weapon('Pugio',random.randint(1,10))
-Hasta = weapon('Hasta',random.randint(1,10))
-Fascina = weapon('Fascina',random.randint(1,10))
-Semispatha = weapon('Semispatha',random.randint(1,10))
-Lancea = weapon('Lancea',random.randint(1,10))
-Sica = weapon('Sica',random.randint(1,10))
-Pilum = weapon('Pilum',random.randint(1,10))
-Arcus = weapon('Arcus',random.randint(1,10))
+Gladius = weapon('Gladius',random.randint(1,12))
+Spatha = weapon('Spatha',random.randint(2,6))
+Pugio = weapon('Pugio',random.randint(2,4))
+Hasta = weapon('Hasta',random.randint(2,8))
+Fascina = weapon('Fascina',random.randint(2,6))
+Semispatha = weapon('Semispatha',random.randint(3,4))
+Lancea = weapon('Lancea',10)
+Sica = weapon('Sica',random.randint(3,6))
+Pilum = weapon('Pilum',random.randint(1,12))
+Arcus = weapon('Arcus',random.randint(3,4))
 weaplist = ["Gladius","Spatha","Pugio","Hasta","Fascina","Semispatha","Lancea","Sica","Pilum","Arcus"]
 def master():
     class Gladi:
@@ -43,8 +47,6 @@ def master():
             self.back=back
     fighter1 = Gladi(0,0,0,0)
     fighter2 = Gladi(0,0,0,0)
-    fighter1.damage = 5
-    fighter2.damage = 5
     def namer():
         Name = input("Type your gladiators Name ")
         if Name == "":
@@ -67,11 +69,51 @@ def master():
                 forge()
             else:
                 if changer == 1:
-                    print(f"Your 1st gladiator, {fighter1.title}s weapon is {Weapon - 1}")
-                    fighter1.damage = Weapon
+                    print(f"Your 1st gladiator, {fighter1.title}s weapon is {weaplist[Weapon - 1]}")
+                    wa = weaplist[Weapon - 1]
+                    if Weapon == 1:
+                        fighter1.damage = Gladius.DG
+                    if Weapon == 2:
+                        fighter1.damage = Spatha.DG
+                    if Weapon == 3:
+                        fighter1.damage = Pugio.DG
+                    if Weapon == 4:
+                        fighter1.damage = Hasta.DG
+                    if Weapon == 5:
+                        fighter1.damage = Fascina.DG
+                    if Weapon == 6:
+                        fighter1.damage = Semispatha.DG
+                    if Weapon == 7:
+                        fighter1.damage = Lancea.DG
+                    if Weapon == 8:
+                        fighter1.damage = Sica.DG
+                    if Weapon == 9:
+                        fighter1.damage = Pilum.DG
+                    if Weapon == 10:
+                        fighter1.damage = Arcus.DG
                 else:
-                    print(f"Your 2nd gladiators, {fighter2.title}s weapon is {Weapon - 1}")
-                    fighter2.damage = Weapon
+                    print(f"Your 2nd gladiator, {fighter1.title}s weapon is {weaplist[Weapon - 1]}")
+                    wb = weaplist[Weapon - 1]
+                    if Weapon == 1:
+                        fighter2.damage = Gladius.DG
+                    if Weapon == 2:
+                        fighter2.damage = Spatha.DG
+                    if Weapon == 3:
+                        fighter2.damage = Pugio.DG
+                    if Weapon == 4:
+                        fighter2.damage = Hasta.DG
+                    if Weapon == 5:
+                        fighter2.damage = Fascina.DG
+                    if Weapon == 6:
+                        fighter2.damage = Semispatha.DG
+                    if Weapon == 7:
+                        fighter2.damage = Lancea.DG
+                    if Weapon == 8:
+                        fighter2.damage = Sica.DG
+                    if Weapon == 9:
+                        fighter2.damage = Pilum.DG
+                    if Weapon == 10:
+                        fighter2.damage = Arcus.DG
         except ValueError:
             print ("That is not a number")
             forge()
@@ -86,6 +128,7 @@ def master():
             else:
                 if changer == 1:
                     print(f"Your 1st gladiator, {fighter1.title}s armor is {lister[Armor - 1]}")
+                    aa = lister[Armor - 1]
                     if Armor == 1:
                         fighter1.defence = Leather.AC
                     if Armor == 2:
@@ -108,6 +151,7 @@ def master():
                         fighter1.defence = Tank.AC
                 else:
                     print(f"Your 2nd gladiators, {fighter2.title}s armor is {lister[Armor - 1]}")
+                    ab = lister[Armor - 1]
                     if Armor == 1:
                         fighter2.defence = Leather.AC
                     if Armor == 2:
@@ -161,7 +205,7 @@ def master():
     change()
     def battle():
         print("Welcome to the COLOSSEUM")
-        print(fighter1.title, fighter1.damage, fighter1.defence, fighter1.back)
-        print(fighter2.title, fighter2.damage, fighter2.defence, fighter2.back)
+        print(fighter1.title, wa, aa, fighter1.back)
+        print(fighter2.title, wb, ab, fighter2.back)
     battle()
 master()
