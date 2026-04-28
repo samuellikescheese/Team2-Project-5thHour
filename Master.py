@@ -1,6 +1,7 @@
 #Scrum document: https://docs.google.com/document/d/1_zBj3TbMbulobdO4XD9UXrmrTHvDDRmD4JMZqRfPbXE/edit?tab=t.0
 
 import random, time
+time.sleep(0.000000001)
 print ("welcome to Gladiator Battle Simulator")
 print ("Your first gladiator")
 changer = 1
@@ -70,6 +71,7 @@ def master():
             else:
                 if changer == 1:
                     print(f"Your 1st gladiator, {fighter1.title}s weapon is {weaplist[Weapon - 1]}")
+                    global wa
                     wa = weaplist[Weapon - 1]
                     if Weapon == 1:
                         fighter1.damage = Gladius.DG
@@ -93,6 +95,7 @@ def master():
                         fighter1.damage = Arcus.DG
                 else:
                     print(f"Your 2nd gladiator, {fighter1.title}s weapon is {weaplist[Weapon - 1]}")
+                    global wb
                     wb = weaplist[Weapon - 1]
                     if Weapon == 1:
                         fighter2.damage = Gladius.DG
@@ -128,6 +131,7 @@ def master():
             else:
                 if changer == 1:
                     print(f"Your 1st gladiator, {fighter1.title}s armor is {lister[Armor - 1]}")
+                    global aa
                     aa = lister[Armor - 1]
                     if Armor == 1:
                         fighter1.defence = Leather.AC
@@ -151,6 +155,7 @@ def master():
                         fighter1.defence = Tank.AC
                 else:
                     print(f"Your 2nd gladiators, {fighter2.title}s armor is {lister[Armor - 1]}")
+                    global ab
                     ab = lister[Armor - 1]
                     if Armor == 1:
                         fighter2.defence = Leather.AC
