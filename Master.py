@@ -41,14 +41,16 @@ Arcus = weapon('Arcus',random.randint(3,4))
 weaplist = ["Gladius","Spatha","Pugio","Hasta","Fascina","Semispatha","Lancea","Sica","Pilum","Arcus"]
 def master():
     class Gladi:
-        def __init__(self,title,health,damage,fAC,back):
+        def __init__(self,title,health,damage,fAC,back,WN,AN):
             self.title=title
             self.health=health
             self.damage=damage
             self.fAC=fAC
             self.back=back
-    fighter1 = Gladi(0,100,0,0,0)
-    fighter2 = Gladi(0,100,0,0,0)
+            self.WN=WN
+            self.AN=AN
+    fighter1 = Gladi(0,100,0,0,0,"","")
+    fighter2 = Gladi(0,100,0,0,0,"","")
     def namer():
         Name = input("Type your gladiators Name ")
         if Name == "":
