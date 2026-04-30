@@ -41,13 +41,14 @@ Arcus = weapon('Arcus',random.randint(3,4))
 weaplist = ["Gladius","Spatha","Pugio","Hasta","Fascina","Semispatha","Lancea","Sica","Pilum","Arcus"]
 def master():
     class Gladi:
-        def __init__(self,title,damage,defence,back):
+        def __init__(self,title,health,damage,fAC,back):
             self.title=title
+            self.health=health
             self.damage=damage
-            self.defence=defence
+            self.fAC=fAC
             self.back=back
-    fighter1 = Gladi(0,0,0,0)
-    fighter2 = Gladi(0,0,0,0)
+    fighter1 = Gladi(0,100,0,0,0)
+    fighter2 = Gladi(0,100,0,0,0)
     def namer():
         Name = input("Type your gladiators Name ")
         if Name == "":
@@ -134,49 +135,49 @@ def master():
                     global aa
                     aa = lister[Armor - 1]
                     if Armor == 1:
-                        fighter1.defence = Leather.AC
+                        fighter1.fAC = Leather.AC
                     if Armor == 2:
-                        fighter1.defence = Iron.AC
+                        fighter1.fAC = Iron.AC
                     if Armor == 3:
-                        fighter1.defence = Samurai.AC
+                        fighter1.fAC = Samurai.AC
                     if Armor == 4:
-                        fighter1.defence = Overgrown.AC
+                        fighter1.fAC = Overgrown.AC
                     if Armor == 5:
-                        fighter1.defence = Champion.AC
+                        fighter1.fAC = Champion.AC
                     if Armor == 6:
-                        fighter1.defence = Radiant.AC
+                        fighter1.fAC = Radiant.AC
                     if Armor == 7:
-                        fighter1.defence = Ninja.AC
+                        fighter1.fAC = Ninja.AC
                     if Armor == 8:
-                        fighter1.defence = Cursed.AC
+                        fighter1.fAC = Cursed.AC
                     if Armor == 9:
-                        fighter1.defence = Charge.AC
+                        fighter1.fAC = Charge.AC
                     if Armor == 10:
-                        fighter1.defence = Tank.AC
+                        fighter1.fAC = Tank.AC
                 else:
                     print(f"Your 2nd gladiators, {fighter2.title}s armor is {lister[Armor - 1]}")
                     global ab
                     ab = lister[Armor - 1]
                     if Armor == 1:
-                        fighter2.defence = Leather.AC
+                        fighter2.fAC = Leather.AC
                     if Armor == 2:
-                        fighter2.defence = Iron.AC
+                        fighter2.fAC = Iron.AC
                     if Armor == 3:
-                        fighter2.defence = Samurai.AC
+                        fighter2.fAC = Samurai.AC
                     if Armor == 4:
-                        fighter2.defence = Overgrown.AC
+                        fighter2.fAC = Overgrown.AC
                     if Armor == 5:
-                        fighter2.defence = Champion.AC
+                        fighter2.fAC = Champion.AC
                     if Armor == 6:
-                        fighter2.defence = Radiant.AC
+                        fighter2.fAC = Radiant.AC
                     if Armor == 7:
-                        fighter2.defence = Ninja.AC
+                        fighter2.fAC = Ninja.AC
                     if Armor == 8:
-                        fighter2.defence = Cursed.AC
+                        fighter2.fAC = Cursed.AC
                     if Armor == 9:
-                        fighter2.defence = Charge.AC
+                        fighter2.fAC = Charge.AC
                     if Armor == 10:
-                        fighter2.defence = Tank.AC
+                        fighter2.fAC = Tank.AC
         except ValueError:
             print ("That is not a number")
             smith()
