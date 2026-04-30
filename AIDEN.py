@@ -22,14 +22,14 @@ global Cursed
 #dodge is for leather, only happens when a hit is above AC to give a second chance
 def dodge(arm):
     if arm == 1:
-        if secondattack >= fighter1.AC:
+        if secondattack >= fighter1.fAC:
             dodgevar = random.randint(1,6)
             if dodgevar == 1:
                 print("The attack was dodged!")
             else:
                 fighter1.health -= fighter2.damage
     else:
-        if firstattack >= fighter2.AC:
+        if firstattack >= fighter2.fAC:
             dodgevar = random.randint(1,6)
             if dodgevar == 1:
                 print("The attack was dodged!")
@@ -39,13 +39,13 @@ def dodge(arm):
 #resistance is for iron, only happens when hit is landed, allows for less damage to be taken
 def resistance(arm):
     if arm == 1:
-        if secondattack >= fighter1.AC:
+        if secondattack >= fighter1.fAC:
             resistancevar = random.randint(0,10)
             fighter2.damage -= resistancevar
             fighter1.health -= fighter2.damage
             print(f"{resistancevar} damage was stopped by the armor!")
     else:
-        if firstattack >= fighter2.AC:
+        if firstattack >= fighter2.fAC:
             resistancevar = random.randint(0,10)
             fighter1.damage -= resistancevar
             fighter2.health -= fighter1.damage
@@ -53,7 +53,7 @@ def resistance(arm):
 #counter is for samurai, only happens when hit is missed
 def counter(arm):
     if arm == 1:
-        if secondattack < fighter1.AC:
+        if secondattack < fighter1.fAC:
             countervar = random.randint(1,3)
             if countervar == 1:
                 fighter2.health -= fighter1.damage
@@ -61,7 +61,7 @@ def counter(arm):
         else:
             fighter1.health -= fighter2.damage
     else:
-        if firstattack < fighter2.AC:
+        if firstattack < fighter2.fAC:
             countervar = random.randint(1,3)
             if countervar == 1:
                 fighter1.health -= fighter2.damage
@@ -72,13 +72,13 @@ def counter(arm):
 #thorns is for overgrown, only happens when hit is landed, can force damage upon opponent, but does not count as the wearer's turn.
 def thorns(arm):
     if arm == 1:
-        if secondattack >= fighter1.AC:
+        if secondattack >= fighter1.fAC:
             fighter1.health -= fighter2.damage
             thornsvar = random.randint(0,5)
             fighter2.health -= thornsvar
             print(f"The armor has given {thornsvar} damage!")
     else:
-        if firstattack >= fighter2.AC:
+        if firstattack >= fighter2.fAC:
             fighter2.health -= fighter1.damage
             thornsvar = random.randint(0,5)
             fighter1.health -= thornsvar
@@ -88,34 +88,34 @@ def thorns(arm):
 def rage(arm):
     if arm == 1:
         if fighter1.health <= 10:
-            fighter1.AC += 1
+            fighter1.fAC += 1
             print("Sudden rage has given an AC increase of 1!")
         elif fighter1.health <= 25:
-            fighter1.AC += 1
+            fighter1.fAC += 1
             print("Sudden rage has given an AC increase of 1!")
-        if secondattack >= fighter1.AC:
+        if secondattack >= fighter1.fAC:
             fighter1.health -= fighter2.damage
     else:
         if fighter2.health <= 10:
-            fighter2.AC += 1
+            fighter2.fAC += 1
             print("Sudden rage has given an AC increase of 1!")
         elif fighter2.health <= 25:
-            fighter2.AC += 1
+            fighter2.fAC += 1
             print("Sudden rage has given an AC increase of 1!")
-        if firstattack >= fighter2.AC:
+        if firstattack >= fighter2.fAC:
             fighter2.health -= fighter1.damage
 
 #heal is only for radiant, allowing for the wearer to regain health if an attack is missed
 def heal(arm):
     if arm == 1:
-        if secondattack >= fighter1.AC:
+        if secondattack >= fighter1.fAC:
             healvar = random.randint(0,10)
             fighter1.health += healvar
             print(f"The missed attack has given an oprotunity to replinish {healvar} health!")
         else:
             fighter1.health -= fighter2.damage
     else:
-        if firstattack >= fighter2.AC:
+        if firstattack >= fighter2.fAC:
             healvar = random.randint(0,10)
             fighter2.health += healvar
             print(f"The missed attack has given an oprotunity to replinish {healvar} health!")
@@ -127,14 +127,14 @@ def hide(arm):
     if arm == 1:
         hidevar = random.randint(0,4)
         secondattack -= hidevar
-        if secondattack < fighter1.AC:
+        if secondattack < fighter1.fAC:
             print("The attack has missed!")
         else:
             fighter1.health -= fighter2.damage
     else:
         hidevar = random.randint(0, 4)
         firstattack -= hidevar
-        if firstattack < fighter2.AC:
+        if firstattack < fighter2.fAC:
             print("The attack has missed!")
         else:
             fighter2.health -= fighter1.damage
@@ -146,26 +146,26 @@ def change(arm):
         random.shuffle(changeAC)
         newAC = changeAC[0]
         Cursed.AC = newAC
-        if secondattack >= fighter1.AC:
+        if secondattack >= fighter1.fAC:
             fighter1.health -= fighter2.damage
     else:
         changeAC = [6, 16]
         random.shuffle(changeAC)
         newAC = changeAC[0]
         Cursed.AC = newAC
-        if firstattack >= fighter2.AC:
+        if firstattack >= fighter2.fAC:
             fighter2.health -= fighter1.damage
 
 #absorb is only for charge, allowing for the wearer's next attack to deal more damage if a hit is taken
 def absorb(arm):
     if arm == 1:
-        if secondattack >= fighter1.AC:
+        if secondattack >= fighter1.fAC:
             figher1.health -= fighter2.damage
             absorbvar = random.randint(1,7)
             fighter1.damage += absorbvar
             print(f"The armor has absorbed {absorbvar} damage, allowing the next strike to deal more damage!")
     else:
-        if firstattack >= fighter2.AC:
+        if firstattack >= fighter2.fAC:
             figher2.health -= fighter1.damage
             absorbvar = random.randint(1,7)
             fighter2.damage += absorbvar
@@ -174,20 +174,20 @@ def absorb(arm):
 #adjust is only for tank, allowing for the wearer to gain or lose AC depending on if the attack has missed or succeeded
 def adjust(arm):
     if arm == 1:
-        if secondattack >= fighter1.AC:
+        if secondattack >= fighter1.fAC:
             fighter1.health -= fighter2.damage
-            fighter1.AC += 2
+            fighter1.fAC += 2
             print("Defence has been adjusted!")
         else:
-            fighter1.AC -= 2
+            fighter1.fAC -= 2
             print("Defence has been adjusted!")
     else:
-        if firstattack >= fighter2.AC:
+        if firstattack >= fighter2.fAC:
             fighter2.health -= fighter1.damage
-            fighter2.AC += 2
+            fighter2.fAC += 2
             print("Defence has been adjusted!")
         else:
-            fighter2.AC -= 2
+            fighter2.AfC -= 2
             print("Defence has been adjusted!")
 
 #Battle loop
