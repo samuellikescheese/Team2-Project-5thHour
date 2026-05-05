@@ -238,64 +238,64 @@ def master():
         print(fighter2.title, wb, ab, fighter2.back)
         roll1 = random.randint(1, 20)
         roll2 = random.randint(1, 20)
-        print(f"{fighter1} VS {fighter2}")
+        print(f"{fighter1.title} VS {fighter2.title}")
         time.sleep(0.5)
         if roll1 >= roll2:
             while 5 > 3:
-                print("Gale attacks the Mindflayer")
+                print(f"{fighter1.title} attacks {fighter2.title}")
                 time.sleep(0.5)
                 hero = random.randint(1, 20)
                 evil = random.randint(1, 20)
                 if not hero == 1 or hero + fighter1.cheese >= fighter2.fAC or hero == 20:
                     fighter2.health -= fighter1.damage
                     if fighter2.health <= 0:
-                        print("the Mindflayer is dead")
+                        print(f"{fighter2.title} is dead")
                         exit()
                     else:
-                        print("the Mindflayer stands")
+                        print(f"{fighter2.title} stands")
                         time.sleep(0.5)
                 else:
                     print("he misses")
                     time.sleep(0.5)
-                print("the Mindflayer attacks")
+                print(f"{fighter2.title} attacks")
                 time.sleep(0.5)
                 if not evil == 1 or evil + fighter2.cheese >= fighter1.fAC or evil == 20:
                     fighter1.health -= fighter2.cheese
                     if fighter1.health <= 0:
-                        print("Gale is dead")
+                        print(f"{fighter1.title} is dead")
                         exit()
                     else:
-                        print("Gale stands")
+                        print(f"{fighter1.title} stands")
                         time.sleep(0.5)
                 else:
                     print("he misses")
                     time.sleep(0.5)
         if roll2 > roll1:
             while 5 > 3:
-                print("the Mindflayer attacks")
+                print(f"{fighter2.title} attacks")
                 time.sleep(0.5)
                 hero = random.randint(1, 20)
                 evil = random.randint(1, 20)
                 if not evil == 1 or evil + fighter2.cheese >= fighter1.fAC or evil == 20:
                     fighter1.health -= fighter2.cheese
                     if fighter1.health <= 0:
-                        print("Gale is dead")
+                        print(f"{fighter1.title} is dead")
                         exit()
                     else:
-                        print("Gale stands")
+                        print(f"{fighter1.title} stands")
                         time.sleep(0.5)
                 else:
                     print("he misses")
                     time.sleep(0.5)
-                print("gale attacks the Mindflayer")
+                print(f"{fighter1.title} attacks {fighter2.title}")
                 time.sleep(0.5)
                 if not hero == 1 or hero + fighter1.cheese >= fighter2.fAC or hero == 20:
                     fighter2.health -= fighter1.damage
                     if fighter2.health <= 0:
-                        print("the Mindflayer is dead")
+                        print(f"{fighter2.title} is dead")
                         exit()
                     else:
-                        print("the Mindflayer stands")
+                        print(f"{fighter2.title} stands")
                         time.sleep(0.5)
                 else:
                     print("he misses")
