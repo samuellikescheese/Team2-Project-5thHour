@@ -41,17 +41,16 @@ Arcus = weapon('Arcus',random.randint(1,4),0)
 weaplist = ["Gladius","Spatha","Pugio","Hasta","Fascina","Semispatha","Lancea","Sica","Pilum","Arcus"]
 def master():
     class Gladi:
-        def __init__(self,title,health,damage,fAC,back,WN,AN,cheese):
+        def __init__(self,title,health,damage,fAC,WN,AN,cheese):
             self.title=title
             self.health=health
             self.damage=damage
             self.fAC=fAC
-            self.back=back
             self.WN=WN
             self.AN=AN
             self.cheese=cheese
-    fighter1 = Gladi(0,100,0,0,0,"","",0)
-    fighter2 = Gladi(0,100,0,0,0,"","",0)
+    fighter1 = Gladi(0,50,0,0,"","",0)
+    fighter2 = Gladi(0,50,0,0,"","",0)
     def namer():
         Name = input("Type your gladiators Name ")
         if Name == "":
@@ -205,24 +204,6 @@ def master():
             print ("That is not a number")
             smith()
     smith()
-    def origin():
-        try:
-            print("1,2,3,4,5,6,7,8,9,10")
-            Skill = int(input("Type which skill you desire "))
-            if Skill <= 0 or Skill >= 11 :
-                print ("try again")
-                origin()
-            else:
-                if changer == 1:
-                    print(f"Your 1st gladiator, {fighter1.title}s skill is {Skill - 1}")
-                    fighter1.back = Skill
-                else:
-                    print(f"Your 2nd gladiators, {fighter2.title}s skill is {Skill - 1}")
-                    fighter2.back = Skill
-        except ValueError:
-            print ("That is not a number")
-            origin()
-    origin()
     def change():
         print("Now the your second gladiator")
         global changer
@@ -230,12 +211,11 @@ def master():
         namer()
         forge()
         smith()
-        origin()
     change()
     def battle():
         print("Welcome to the COLOSSEUM")
-        print(fighter1.title, wa, aa, fighter1.back)
-        print(fighter2.title, wb, ab, fighter2.back)
+        print(fighter1.title, wa, aa)
+        print(fighter2.title, wb, ab)
         roll1 = random.randint(1, 20)
         roll2 = random.randint(1, 20)
         print(f"{fighter1.title} VS {fighter2.title}")
