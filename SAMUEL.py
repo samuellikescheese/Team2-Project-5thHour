@@ -1,17 +1,2 @@
-import random
-def speed():
-    print ("you attack twice with speed")
-    sped = random.randint(1,10)
-speed()
-def block():
-    print ("you take no damage this turn")
-    blck = random.randint(1,9)
-def crit():
-    print ("you deal double damage")
-    crt = random.randint(1,20)
-def healer():
-    print ("you heal 1d10 hp")
-    heal = random.randint(1,10)
-def defend():
-    print ("you take 1 less damage")
-    defd = random.randint(1,10)
+print("1(leather),2(iron),3(samurai),4(overgrown),5(champion),6(radiant),7(ninja),8(cursed),9(charge),10(tank)")
+print("1(gladius),2(spatha),3(pugio),4(hasta),5(fascina),6(semispatha),7(lancea),8(sica),9(pilum),10(arcus)")
