@@ -29,13 +29,13 @@ class weapon:
         self.DG=DG
         self.Atkmod=Atkmod
 Gladius = weapon('Gladius',random.randint(1,12),3)
-Spatha = weapon('Spatha',random.randint(2,6),2)
-Pugio = weapon('Pugio',random.randint(2,4),4)
-Hasta = weapon('Hasta',random.randint(2,8),1)
-Fascina = weapon('Fascina',random.randint(2,6),3)
-Semispatha = weapon('Semispatha',random.randint(3,4),3)
+Spatha = weapon('Spatha',random.randint(1,6) + random.randint(1,6),2)
+Pugio = weapon('Pugio',random.randint(1,4) + random.randint(1,4),4)
+Hasta = weapon('Hasta',random.randint(1,8) + random.randint(1,8),1)
+Fascina = weapon('Fascina',random.randint(1,6) + random.randint(1,6),3)
+Semispatha = weapon('Semispatha',random.randint(1,4) + random.randint(1,4) + random.randint(1,4),3)
 Lancea = weapon('Lancea',10,5)
-Sica = weapon('Sica',random.randint(3,6),1)
+Sica = weapon('Sica',random.randint(1,6) + random.randint(1,6) + random.randint(1,6),1)
 Pilum = weapon('Pilum',random.randint(1,12),2)
 Arcus = weapon('Arcus',random.randint(1,4),0)
 weaplist = ["Gladius","Spatha","Pugio","Hasta","Fascina","Semispatha","Lancea","Sica","Pilum","Arcus"]
@@ -226,6 +226,46 @@ def master():
                 time.sleep(0.5)
                 hero = random.randint(1, 20)
                 evil = random.randint(1, 20)
+                if fighter1.WN == "Gladius":
+                    fighter1.damage = random.randint(1,12)
+                elif fighter1.WN == "Spatha":
+                    fighter1.damage = random.randint(1,6) + random.randint(1,6)
+                elif fighter1.WN == "Pugio":
+                    fighter1.damage = random.randint(1,4) + random.randint(1,4)
+                elif fighter1.WN == "Hasta":
+                    fighter1.damage = random.randint(1,8) + random.randint(1,8)
+                elif fighter1.WN == "Fascina":
+                    fighter1.damage = random.randint(1,6) + random.randint(1,6)
+                elif fighter1.WN == "Semispatha":
+                    fighter1.damage = random.randint(1,4) + random.randint(1,4) + random.randint(1,4)
+                elif fighter1.WN == "Lancea":
+                    fighter1.damage = 10
+                elif fighter1.WN == "Sica":
+                    fighter1.damage = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+                elif fighter1.WN == "Pilum":
+                    fighter1.damage = random.randint(1,12)
+                elif fighter1.WN == "Arcus":
+                    fighter1.damage = random.randint(1,4)
+                if fighter2.WN == "Gladius":
+                    fighter2.damage = random.randint(1,12)
+                elif fighter2.WN == "Spatha":
+                    fighter2.damage = random.randint(1,6) + random.randint(1,6)
+                elif fighter2.WN == "Pugio":
+                    fighter2.damage = random.randint(1,4) + random.randint(1,4)
+                elif fighter2.WN == "Hasta":
+                    fighter2.damage = random.randint(1,8) + random.randint(1,8)
+                elif fighter2.WN == "Fascina":
+                    fighter2.damage = random.randint(1,6) + random.randint(1,6)
+                elif fighter2.WN == "Semispatha":
+                    fighter2.damage = random.randint(1,4) + random.randint(1,4) + random.randint(1,4)
+                elif fighter2.WN == "Lancea":
+                    fighter2.damage = 10
+                elif fighter2.WN == "Sica":
+                    fighter2.damage = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+                elif fighter2.WN == "Pilum":
+                    fighter2.damage = random.randint(1,12)
+                elif fighter2.WN == "Arcus":
+                    fighter2.damage = random.randint(1,4)
                 if not hero == 1 or hero + fighter1.cheese >= fighter2.fAC or hero == 20:
                     fighter2.health -= fighter1.damage
                     if fighter2.health <= 0:
@@ -252,6 +292,46 @@ def master():
                     time.sleep(0.5)
         if roll2 > roll1:
             while 5 > 3:
+                if fighter1.WN == "Gladius":
+                    fighter1.damage = random.randint(1,12)
+                elif fighter1.WN == "Spatha":
+                    fighter1.damage = random.randint(1,6) + random.randint(1,6)
+                elif fighter1.WN == "Pugio":
+                    fighter1.damage = random.randint(1,4) + random.randint(1,4)
+                elif fighter1.WN == "Hasta":
+                    fighter1.damage = random.randint(1,8) + random.randint(1,8)
+                elif fighter1.WN == "Fascina":
+                    fighter1.damage = random.randint(1,6) + random.randint(1,6)
+                elif fighter1.WN == "Semispatha":
+                    fighter1.damage = random.randint(1,4) + random.randint(1,4) + random.randint(1,4)
+                elif fighter1.WN == "Lancea":
+                    fighter1.damage = 10
+                elif fighter1.WN == "Sica":
+                    fighter1.damage = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+                elif fighter1.WN == "Pilum":
+                    fighter1.damage = random.randint(1,12)
+                elif fighter1.WN == "Arcus":
+                    fighter1.damage = random.randint(1,4)
+                if fighter2.WN == "Gladius":
+                    fighter2.damage = random.randint(1,12)
+                elif fighter2.WN == "Spatha":
+                    fighter2.damage = random.randint(1,6) + random.randint(1,6)
+                elif fighter2.WN == "Pugio":
+                    fighter2.damage = random.randint(1,4) + random.randint(1,4)
+                elif fighter2.WN == "Hasta":
+                    fighter2.damage = random.randint(1,8) + random.randint(1,8)
+                elif fighter2.WN == "Fascina":
+                    fighter2.damage = random.randint(1,6) + random.randint(1,6)
+                elif fighter2.WN == "Semispatha":
+                    fighter2.damage = random.randint(1,4) + random.randint(1,4) + random.randint(1,4)
+                elif fighter2.WN == "Lancea":
+                    fighter2.damage = 10
+                elif fighter2.WN == "Sica":
+                    fighter2.damage = random.randint(1,6) + random.randint(1,6) + random.randint(1,6)
+                elif fighter2.WN == "Pilum":
+                    fighter2.damage = random.randint(1,12)
+                elif fighter2.WN == "Arcus":
+                    fighter2.damage = random.randint(1,4)
                 print(f"{fighter2.title} attacks")
                 time.sleep(0.5)
                 hero = random.randint(1, 20)
