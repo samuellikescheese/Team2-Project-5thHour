@@ -79,33 +79,43 @@ def master():
                     if Weapon == 1:
                         fighter1.damage = Gladius.DG
                         fighter1.cheese = Gladius.Atkmod
+                        fighter1.WN = "Gladius"
                     if Weapon == 2:
                         fighter1.damage = Spatha.DG
                         fighter1.cheese = Spatha.Atkmod
+                        fighter1.WN = "Spatha"
                     if Weapon == 3:
                         fighter1.damage = Pugio.DG
                         fighter1.cheese = Pugio.Atkmod
+                        fighter1.WN = "Pugio"
                     if Weapon == 4:
                         fighter1.damage = Hasta.DG
                         fighter1.cheese = Hasta.Atkmod
+                        fighter1.WN = "Hasta"
                     if Weapon == 5:
                         fighter1.damage = Fascina.DG
                         fighter1.cheese = Fascina.Atkmod
+                        fighter1.WN = "Fascina"
                     if Weapon == 6:
                         fighter1.damage = Semispatha.DG
                         fighter1.cheese = Semispatha.Atkmod
+                        fighter1.WN = "Semispatha"
                     if Weapon == 7:
                         fighter1.damage = Lancea.DG
                         fighter1.cheese = Lancea.Atkmod
+                        fighter1.WN = "Lancea"
                     if Weapon == 8:
                         fighter1.damage = Sica.DG
                         fighter1.cheese = Sica.Atkmod
+                        fighter1.WN = "Sica"
                     if Weapon == 9:
                         fighter1.damage = Pilum.DG
                         fighter1.cheese = Pilum.Atkmod
+                        fighter1.WN = "Pilum"
                     if Weapon == 10:
                         fighter1.damage = Arcus.DG
                         fighter1.cheese = Arcus.Atkmod
+                        fighter1.WN = "Arcus"
                 else:
                     print(f"Your 2nd gladiator, {fighter2.title}s weapon is {weaplist[Weapon - 1]}")
                     global wb
@@ -113,33 +123,43 @@ def master():
                     if Weapon == 1:
                         fighter2.damage = Gladius.DG
                         fighter2.cheese = Gladius.Atkmod
+                        fighter2.WN = "Gladius"
                     if Weapon == 2:
                         fighter2.damage = Spatha.DG
                         fighter2.cheese = Spatha.Atkmod
+                        fighter2.WN = "Spatha"
                     if Weapon == 3:
                         fighter2.damage = Pugio.DG
                         fighter2.cheese = Pugio.Atkmod
+                        fighter2.WN = "Pugio"
                     if Weapon == 4:
                         fighter2.damage = Hasta.DG
                         fighter2.cheese = Hasta.Atkmod
+                        fighter2.WN = "Hasta"
                     if Weapon == 5:
                         fighter2.damage = Fascina.DG
                         fighter2.cheese = Fascina.Atkmod
+                        fighter2.WN = "Fascina"
                     if Weapon == 6:
                         fighter2.damage = Semispatha.DG
                         fighter2.cheese = Semispatha.Atkmod
+                        fighter2.WN = "Semispatha"
                     if Weapon == 7:
                         fighter2.damage = Lancea.DG
                         fighter2.cheese = Lancea.Atkmod
+                        fighter2.WN = "Lancea"
                     if Weapon == 8:
                         fighter2.damage = Sica.DG
                         fighter2.cheese = Sica.Atkmod
+                        fighter2.WN = "Sica"
                     if Weapon == 9:
                         fighter2.damage = Pilum.DG
                         fighter2.cheese = Pilum.Atkmod
+                        fighter2.WN = "Pilum"
                     if Weapon == 10:
                         fighter2.damage = Arcus.DG
                         fighter2.cheese = Arcus.Atkmod
+                        fighter2.WN = "Arcus"
         except ValueError:
             print ("That is not a number")
             forge()
@@ -311,10 +331,10 @@ def master():
                 if not hero == 1 or hero + fighter1.cheese >= fighter2.fAC or hero == 20:
                     fighter2.health -= fighter1.damage
                     if fighter2.health <= 0:
-                        print(f"{fighter2.title} is dead")
+                        print(f"after taking {fighter1.damage} damage, {fighter2.title} is dead")
                         exit()
                     else:
-                        print(f"{fighter2.title} stands")
+                        print(f"after taking {fighter1.damage} damage, {fighter2.title} stands at {fighter2.health} health")
                         time.sleep(0.5)
                 else:
                     print("he misses")
@@ -324,10 +344,10 @@ def master():
                 if not evil == 1 or evil + fighter2.cheese >= fighter1.fAC or evil == 20:
                     fighter1.health -= fighter2.cheese
                     if fighter1.health <= 0:
-                        print(f"{fighter1.title} is dead")
+                        print(f"after taking {fighter2.damage} damage, {fighter1.title} is dead")
                         exit()
                     else:
-                        print(f"{fighter1.title} stands")
+                        print(f"after taking {fighter1.damage} damage, {fighter1.title} stands at {fighter1.health} health")
                         time.sleep(0.5)
                 else:
                     print("he misses")
@@ -423,10 +443,10 @@ def master():
                 if not evil == 1 or evil + fighter2.cheese >= fighter1.fAC or evil == 20:
                     fighter1.health -= fighter2.cheese
                     if fighter1.health <= 0:
-                        print(f"{fighter1.title} is dead")
+                        print(f"after taking {fighter2.damage} damage, {fighter1.title} is dead")
                         exit()
                     else:
-                        print(f"{fighter1.title} stands")
+                        print(f"after taking {fighter2.damage} damage, {fighter1.title} stands at {fighter1.health} health")
                         time.sleep(0.5)
                 else:
                     print("he misses")
@@ -436,10 +456,10 @@ def master():
                 if not hero == 1 or hero + fighter1.cheese >= fighter2.fAC or hero == 20:
                     fighter2.health -= fighter1.damage
                     if fighter2.health <= 0:
-                        print(f"{fighter2.title} is dead")
+                        print(f"after taking {fighter1.damage} damage, {fighter2.title} is dead")
                         exit()
                     else:
-                        print(f"{fighter2.title} stands")
+                        print(f"after taking {fighter1.damage} damage, {fighter2.title} stands at {fighter2.health} health")
                         time.sleep(0.5)
                 else:
                     print("he misses")
